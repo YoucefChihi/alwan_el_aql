@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>ألوان العقل</name>
+    <description>
+        لعبة لتسلية العقل
+    </description>
+    <author email="youcef.chihi@gmail.com" >
+        Youcef Chihi
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <preference name="StatusBarBackgroundColor" value="#3f4c6b" />
+        <preference name="Orientation" value="portrait" />
+        <splash src="splash.png" density="port-hdpi"/>
+        <preference name="ShowSplashScreenSpinner" value="false"/>
+        <icon src="icon.png" width="57" height="57" density="mdpi" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <engine name="android" spec="~5.2.2" />
+</widget>

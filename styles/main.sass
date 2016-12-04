@@ -1,0 +1,195 @@
+@import url(https://fonts.googleapis.com/css?family=Lalezar)
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons)
+@import './constants.sass'
+
+$game-bg: radial-gradient(ellipse at center, #606c88 0%,#3f4c6b 100%)
+
+.root
+  font-family: 'Lalezar', cursive
+  font-size: 3em
+  position: absolute
+  overflow: hidden
+  background: $game-bg
+  height: 100%
+  width: 100%
+
+.gameover, .main-menu
+  position: absolute
+  background: $game-bg
+  z-index: 1
+  height: 100%
+  width: 100%
+  display: none
+  &.on
+    @extend .center
+    text-align: center
+
+.main-menu
+    .main-container
+      .rules
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: transparentize(black, .2)
+        z-index: 20
+        color: white
+        display: none
+        align-items: center
+        &.on
+          display: flex
+        .rules-text
+          display: inline-block
+          color: 0
+        .close-rules
+          position: fixed
+          top: 0
+          right: 0
+          margin: 20px
+          text-shadow: $shadow-1
+      .highest-score
+        margin-top: -20%
+        margin-bottom: 50px
+        font-size: .8em
+        color: white
+        text-shadow: $shadow-2
+      .rules-button
+        background: white
+        padding: 0 10%
+        border-radius: 10vw
+        color: transparentize(black, .15)
+        box-shadow: $shadow-2
+      .start
+        text-shadow: $shadow-1
+        color: white
+        .material-icons
+          margin-top: 50px
+          transform: scale(4)
+
+.gameover
+  font-size: .8em
+  .score
+    margin-top: -30%
+  .title
+    color: transparentize(black, .2)
+  .value
+    color: transparentize(white, .05)
+  .time
+    margin-top: 10%
+  .gameover-controlls
+    position: absolute
+    bottom: 10%
+    width: 100%
+    height: 10%
+    @extend .center
+    .button
+      display: inline-flex
+      background: white
+      margin: 0 20px
+      width: 30%
+      height: 80%
+      box-shadow: $shadow-2
+      justify-content: center
+      align-items: center
+      border-radius: 50vw
+      &.play
+        .material-icons
+          transform: scale(1.2)
+
+.game-area
+  position: absolute
+  width: 100%
+  height: 100%
+  .game-menu
+    position: absolute
+    width: 100%
+    font-size: .7em
+    color: transparentize(white, .05)
+    background: transparentize(black, .8)
+    @extend .center
+    justify-content: space-around
+
+  .game-subject
+    height: 80%
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    .subject-container
+      position: relative
+      width: 100%
+      .stamp-container
+        position: absolute
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        .stamp
+          @extend .center
+          font-size: 1.2em
+          border-radius: .3em
+          height: 15vh
+          box-shadow: $shadow-2
+          text-shadow: $shadow-2
+          width: 50%
+          border: solid .3em red
+          color: red
+          transform: rotate(-40deg)
+          visibility: hidden
+          &.correct
+            border: solid .3em green
+            color: green
+          &.bammed
+            visibility: visible
+            animation: bam .1s
+
+      .top-box, .bot-box
+        display: inline-flex
+        width: 60%
+        height: 15vh
+        margin: 3% 20%
+        justify-content: center
+        align-items: center
+        border-radius: 3vh
+        box-shadow: $shadow-2
+        background: transparentize(white, .5)
+        &.popped
+          animation: pop .3s
+      .top-box
+        color: transparentize(black, .25)
+      .bot-box
+        background: transparentize(black, .5)
+        color: white
+
+  .game-controlls
+    background: transparentize(black, .5)
+    height: 20%
+    width: 100%
+    display: flex
+    .yes-button, .no-button
+      width: 49.5%
+      color: transparentize(white, .02)
+      @extend .center
+      font-size: 1.5em
+    .yes-button
+      background: $green
+    .no-button
+      margin-right: 1%
+      background: $red
+
+
+@keyframes pop
+  0%
+    transform: scale(.1)
+  50%
+    transform: scale(1.2)
+  100%
+    transform: scale(1)
+
+@keyframes bam
+  0%
+    transform: scale(1.2) translate3d(100%, -100%, 0) rotate(-40deg)
+  100%
+    transform: scale(1) translate3d(0, 0, 0) rotate(-40deg)

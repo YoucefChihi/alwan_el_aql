@@ -1,0 +1,89 @@
+$bg: rgba(255, 255, 255, 0.13)
+$gradient-bg: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.13) 77%, rgba(255, 255, 255, 0.5) 92%, rgba(255, 255, 255, 0.0) 100%)
+$shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+$shadow-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+$shadow-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+$shadow-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+$shadow-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
+$bg1: lighten(#FFF176, 15)
+$bg2: lighten(#F57F17, 15)
+$duration: 0.5s
+
+$red:        #F44336
+$pink:       #E91E63
+$purple:     #9C27B0
+$deeppurple: #673AB7
+$indigo:     #3F51B5
+$blue:       #2196F3
+$lightblue:  #03A9F4
+$cyan:       #00BCD4
+$teal:       #009688
+$green:      #4CAF50
+$lightgreen: #8BC34A
+$lime:       #CDDC39
+$yellow:     #FFEB3B
+$amber:      #FFC107
+$orange:     #FF9800
+$deeporange: #FF5722
+$brown:      #795548
+$grey:       #9E9E9E
+$bluegrey:   #607D8B
+
+$background: #eee
+// $background: lighten(gray, 40)
+$dark-bg: darken(#fd746c, 5)
+$circle-background: teal
+$circle-fill: salmon
+$accent: $amber
+$goods-label: $teal
+
+$screen-width: 100vw
+$screen-height: 100vh
+
+
+
+.overlay-before
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: transparentize(black, 0.95)
+
+.center
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+
+.hidden
+  display: none
+
+a
+  text-decoration: none
+  color: inherit
+
+button,
+button:focus,
+button:active,
+a, a:focus, a:active, a:visited
+	@extend div
+	border: none
+	background: none
+	outline: none
+	padding: 0
+
+html, body
+  margin: 0
+  font-family: "Lato", sans-serif
+  max-height: $screen-height
+
+div, button, a
+  -webkit-touch-callout:  none; /* iOS Safari */
+  -webkit-user-select:  none;   /* Chrome/Safari/Opera */
+  -khtml-user-select:  none;    /* Konqueror */
+  -moz-user-select:  none;      /* Firefox */
+  -ms-user-select:  none;       /* Internet Explorer/Edge */
+  user-select:  none
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0)
